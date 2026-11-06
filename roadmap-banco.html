@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap: Vaga Tech Itaú/Nubank</title>
+    <style>
+        :root {
+            --bg-color: #121214;
+            --card-bg: #202024;
+            --text-main: #e1e1e6;
+            --text-muted: #a8a8b3;
+            --itau-orange: #ec7000;
+            --nubank-purple: #8a05be;
+            --santander-red: #ec0000;
+            --accent: #8257e5;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, var(--itau-orange), var(--nubank-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .progress-container {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 900px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .progress-bar-bg {
+            background-color: #323238;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--itau-orange), var(--nubank-purple));
+            width: 0%;
+            transition: width 0.4s ease;
+        }
+
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            border-top: 4px solid var(--accent);
+        }
+
+        .card:nth-child(1) { border-color: var(--itau-orange); }
+        .card:nth-child(2) { border-color: var(--nubank-purple); }
+        .card:nth-child(3) { border-color: var(--santander-red); }
+        .card:nth-child(4) { border-color: #04d361; }
+
+        h2 {
+            font-size: 1.2rem;
+            margin-top: 0;
+            border-bottom: 1px solid #323238;
+            padding-bottom: 10px;
+        }
+
+        .task {
+            display: flex;
+            align-items: flex-start;
+            margin: 12px 0;
+            cursor: pointer;
+        }
+
+        .task input {
+            margin-right: 10px;
+            margin-top: 4px;
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+            accent-color: var(--accent);
+        }
+
+        .task span {
+            flex: 1;
+            line-height: 1.4;
+        }
+
+        .task-desc {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .completed span {
+            text-decoration: line-through;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Missão: Vaga Tech Bancária (Estágio/Jr)</h1>
+        <p>Roadmap de preparação técnica e estratégica para o Franklin.</p>
+    </header>
+
+    <div class="progress-container">
+        <div style="display: flex; justify-content: space-between;">
+            <strong>Progresso Geral</strong>
+            <span id="progress-text">0%</span>
+        </div>
+        <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="progress-bar"></div>
+        </div>
+    </div>
+
+    <div class="roadmap-grid">
+        <!-- Fase 1 -->
+        <div class="card">
+            <h2>1. Domínio Técnico (O Core)</h2>
+            <label class="task"><input type="checkbox" class="tracker"> 
+                <div>
+                    <span>Revisar Java e POO (Bootcamp)</span>
+                    <span class="task-desc">Garantir que herança, polimorfismo e interfaces estão no sangue.</span>
+                </div>
+            </label>
+            <label class="task"><input type="checkbox" class="tracker"> 
+                <div>
+                    <span>Spring Boot (Essencial)</span>
+                    <span class="task-desc">Aprender a criar APIs RESTful, injeção de dependência e Spring Data JPA. O Itaú usa massivamente.</span>
+                </div>
+            </label>
+            <label class="task"><input type="checkbox" class="tracker"> 
+                <div>
+                    <span>Testes Automatizados</span>
+                    <span class="task-desc">Bancos não sobem código sem teste. Dominar JUnit e Mockito.</span>
+                </div>
+            </label>
+        </div>
+
+        <!-- Fase 2 -->
+        <div class="card">
+            <h2>2. Dados e Escalabilidade</h2>
+            <label class="task"><input type="checkbox" class="tracker"> 
+                <div>
+                    <span>Bancos de Dados Relacionais</span>
+                    <span class="task-desc">Modelagem SQL, PostgreSQL. Instituições financeiras precisam de transações perfeitas (ACID).</span>
+                </div>
+            </label>
+            <label class="task"><input type="checkbox" class="tracker"> 
+                <div>
+                    <span>Conceitos de Mensageria (Bônus Forte)</span>
+                    <span class="task-desc">Entender o básico de Kafka ou RabbitMQ. É assim que o PIX funciona nos bastidores.</span>
+                </div>
+            </label>
+            <label class="task"><input type="checkbox" class="tracker"> 
+                <div>
+                    <span>Git e Versionamento Profissional</span>
+                    <span class="task-desc">Ir além do commit/push. Entender GitFlow, branches e Pull Requests.</span>
+                </div>
+            </label>
+        </div>
+
+        <!-- Fase 3 -->
+        <div class="card">
+            <h2>3. Portfólio Bancário</h2>
+            <label class="task"><input type="checkbox" class="tracker"> 
+                <div>
+                    <span>Projeto 1: Mini-Banco (API)</span>
+                    <span class="task-desc">Criar uma API de cadastro de clientes e abertura de contas com validações.</span>
+                </div>
+            </label>
+            <label class="task"><input type="checkbox" class="tracker"> 
+                <div>
+                    <span>Projeto 2: Simulação de PIX</span>
+                    <span class="task-desc">Fazer um sistema de transferência de saldo entre contas, testando o cenário onde a conta não tem saldo (regras de negócio).</span>
+                </div>
+            </label>
+            <label class="task"><input type="checkbox" class="tracker"> 
+                <div>
+                    <span>Hospedar Projetos (Cloud Básico)</span>
+                    <span class="task-desc">Colocar as APIs no ar usando AWS (Free Tier), Render ou Heroku e ter os repositórios bonitos no GitHub.</span>
+                </div>
+            </label>
+        </div>
+
+        <!-- Fase 4 -->
+        <div class="card">
+            <h2>4. Estratégia e Processo Seletivo</h2>
+            <label class="task"><input type="checkbox" class="tracker"> 
+                <div>
+                    <span>LinkedIn Otimizado</span>
+                    <span class="task-desc">Destacar o Bootcamp Santander e projetos práticos. Palavras-chave: Java, Spring Boot, Backend, Junior.</span>
+                </div>
+            </label>
+            <label class="task"><input type="checkbox" class="tracker"> 
+                <div>
+                    <span>Tradução de Soft Skills</span>
+                    <span class="task-desc">Na entrevista, usar sua experiência com logística para provar que você sabe seguir regras de segurança, protocolos e trabalhar em equipe.</span>
+                </div>
+            </label>
+            <label class="task"><input type="checkbox" class="tracker"> 
+                <div>
+                    <span>Mapear Vagas (Gupy/Kenoby)</span>
+                    <span class="task-desc">Monitorar "Trabalhe Conosco" do Itaú, Nubank, Bradesco, Santander e BTG. Focar em programas de Estágio, Trainee e Vagas Jr.</span>
+                </div>
+            </label>
+        </div>
+    </div>
+
+    <script>
+        const checkboxes = document.querySelectorAll('.tracker');
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
+
+        // Carregar estado salvo
+        const savedData = JSON.parse(localStorage.getItem('bancoRoadmap')) || {};
+        
+        checkboxes.forEach((cb, index) => {
+            if (savedData[index]) {
+                cb.checked = true;
+                cb.closest('.task').classList.add('completed');
+            }
+
+            cb.addEventListener('change', (e) => {
+                const isChecked = e.target.checked;
+                
+                if (isChecked) {
+                    e.target.closest('.task').classList.add('completed');
+                } else {
+                    e.target.closest('.task').classList.remove('completed');
+                }
+
+                // Salvar estado
+                savedData[index] = isChecked;
+                localStorage.setItem('bancoRoadmap', JSON.stringify(savedData));
+                
+                updateProgress();
+            });
+        });
+
+        function updateProgress() {
+            const total = checkboxes.length;
+            const checked = document.querySelectorAll('.tracker:checked').length;
+            const percentage = Math.round((checked / total) * 100);
+            
+            progressBar.style.width = percentage + '%';
+            progressText.innerText = percentage + '%';
+        }
+
+        // Inicializar progresso
+        updateProgress();
+    </script>
+</body>
+</html>
